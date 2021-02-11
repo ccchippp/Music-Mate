@@ -1,0 +1,2 @@
+class LikedAlbumsController < ApplicationController
+end
