@@ -33,9 +33,17 @@ rails g resource liked_song like:boolean song:references user:references
 rails g resource liked_album like:boolean album:references user:references
 rails g resource liked_artist like:boolean artist:references user:references
 
+User
 
-User: name (string), bio(text)
-Likes: like (boolean), user (references), song (references)
-Song: name(string), artist (references), album (references)
-Album: title(string), artist (references), release_date(time_date)
-Artist: name(string), album (references), song(references)
+Artist
+    index
+        (shows all artist, we use our search here)
+    show
+        (shows all artists albums)
+
+Album
+    show
+        (displays all songs on an album)
+
+Song
+

@@ -1,7 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Song.destroy_all
+Album.destroy_all
+Artist.destroy_all
+
+
+kanye = Artist.create( name: "Kanye")
+fjm = Artist.create( name: "Father John Misty")
+zepp = Artist.create( name: "Led Zeppelin")
+nirvana = Artist.create( name: "Nirvana")
+
+lz = Album.create( title: "Led Zeppelin", release_date: 1969, artist_id: zepp.id )
+lzII = Album.create( title: "Led Zeppelin II", release_date: 1969, artist_id: zepp.id )
+lzIII = Album.create( title: "Led Zeppelin III", release_date: 1970, artist_id: zepp.id )
+lzIV = Album.create( title: "Led Zeppelin IV", release_date: 1971, artist_id: zepp.id )
+
+# Song.all.select(&:name).map(&:name) Returns song name
+# Song.all.select(&:name).map(&:artist).map(&:name) Returns artist
+
+Song.create( name: "Good Times Bad Times", album_id: lz.id, artist_id: zepp.id )
+Song.create( name: "Babe I'm Gonna Leave You", album_id: lz.id, artist_id: zepp.id )
+Song.create( name: "You Shook Me", album_id: lz.id, artist_id: zepp.id )
+Song.create( name: "Dazed and Confused", album_id: lz.id, artist_id: zepp.id )
+Song.create( name: "Your Time is Gonna Come", album_id: lz.id, artist_id: zepp.id )
+Song.create( name: "Black Mountain Side", album_id: lz.id, artist_id: zepp.id )
+Song.create( name: "Communication Breakdown", album_id: lz.id, artist_id: zepp.id )
+Song.create( name: "I Can't Quit You Baby", album_id: lz.id, artist_id: zepp.id )
+Song.create( name: "How Many More Times", album_id: lz.id, artist_id: zepp.id )
