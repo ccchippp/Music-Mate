@@ -1,6 +1,7 @@
 <h1> <%= @artist.name %> </h1>
 
 <% @artist.albums.each do |album| %>
+    <%= image_tag (album.artwork) %>
 <p> <%= link_to album.title, album_path(album) %> </p>
 
 <% end %>
