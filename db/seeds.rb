@@ -25,3 +25,24 @@ Song.create( name: "Black Mountain Side", album_id: lz.id, artist_id: zepp.id )
 Song.create( name: "Communication Breakdown", album_id: lz.id, artist_id: zepp.id )
 Song.create( name: "I Can't Quit You Baby", album_id: lz.id, artist_id: zepp.id )
 Song.create( name: "How Many More Times", album_id: lz.id, artist_id: zepp.id )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
