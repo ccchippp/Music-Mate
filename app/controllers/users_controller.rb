@@ -9,11 +9,12 @@ class UsersController < ApplicationController
         @user.toggle(:liked_album).save
     end
 
+    def username
+        return self.email.split('@')[0].capitalize
+    end
+
     private
     def find_user
         @user = User.find(params[:id])
     end
 end
-
-# easy psuedo username method
-# user.email.split('@')[0].capitalize
