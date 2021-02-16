@@ -33,11 +33,3 @@ Song.create( name: "How Many More Times", album_id: lz.id, artist_id: zepp.id )
 # lzIII = Album.create( title: "Led Zeppelin III", release_date: 1970, artist_id: zepp.id, artwork: '/app/assets/images/artwork/lzIII.jpg' )
 # lzIV = Album.create( title: "Led Zeppelin IV", release_date: 1971, artist_id: zepp.id, artwork: '/app/assets/images/artwork/lzIV.jpg' )
 
-#File.open(File.join(Rails.root, "/app/assets/images/seed/#{file_name}.jpg"))
-# def add_artwork
-#     unless artwork.attached?
-#       artwork.attach(
-#         io: File.open(Rails.root.join('app', 'assets', 'images', 'no_image_available.jpg')),
-#         filename: 'no_image_available.jpg', content_type: 'image/jpg'
-#     end
-#   end
