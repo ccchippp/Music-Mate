@@ -11,5 +11,8 @@ class AlbumsController < ApplicationController
     def find_album
         @album = Album.find(params[:id])
     end
+    # def toggle_like
+    #     @album.toggle!(:like)
+    #   end
 
 end
