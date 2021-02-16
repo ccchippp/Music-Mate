@@ -4,4 +4,7 @@
     <%= image_tag(album.artwork, size: "300") %>
 <p> <%= link_to album.title, album_path(album) %> </p>
 
+
+<p> <%= User.find(params[:id]) %> </p>
+
 <% end %> 

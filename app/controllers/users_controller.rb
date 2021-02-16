@@ -14,3 +14,6 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 end
+
+# easy psuedo username method
+# user.email.split('@')[0].capitalize
