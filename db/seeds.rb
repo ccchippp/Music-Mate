@@ -3,9 +3,9 @@ Album.destroy_all
 Artist.destroy_all
 
 zepp = Artist.create(name: "Led Zeppelin")
-# nirvana = Artist.create(name: "Nirvana")
-# kanye = Artist.create(name: "Kanye")
-# fjm = Artist.create(name: "Father John Misty")
+nirvana = Artist.create(name: "Nirvana")
+kanye = Artist.create(name: "Kanye")
+fjm = Artist.create(name: "Father John Misty")
 
 lz = Album.create( title: "Led Zeppelin", release_date: 1969, artist_id: zepp.id, artwork: "https://images-na.ssl-images-amazon.com/images/I/51SUWsbmnHL._SX466_.jpg")
     Song.create( name: "Good Times Bad Times", album_id: lz.id, artist_id: zepp.id )
