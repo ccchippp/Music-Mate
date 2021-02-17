@@ -1,0 +1,23 @@
+<%= image_tag(@album.artwork, size: "50") %>
+<h1> <%= @album.title %> </h1>
+
+<table>
+    <thead>
+    <tr>
+    <th>likes</th>
+    <th>Song</th>
+    <th>Artist</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @album.songs.each do |song| %>
+        <tr>
+            <td> like </td>
+            <td><%= song.name %></td>
+            <td><%= song.artist.name %></td>
+        </tr>
+    <%end%>
+    </tbody>
+</table>
+<%= link_to "Back to #{@album.artist.name}'s Albums", :back %>
