@@ -1,12 +1,15 @@
 <%= image_tag(@album.artwork, size: "50") %>
 <h1> <%= @album.title %> </h1>
 
+<div id="table">
 <table>
     <thead>
     <tr>
+    <div id="th">
     <th>likes</th>
     <th>Song</th>
     <th>Artist</th>
+    </div>
     </tr>
     </thead>
 
@@ -20,4 +23,5 @@
     <%end%>
     </tbody>
 </table>
+</div>
 <%= link_to "Back to #{@album.artist.name}'s Albums", :back %>
