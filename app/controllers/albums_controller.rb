@@ -4,6 +4,7 @@ class AlbumsController < ApplicationController
   
     def index 
         @albums = Albums.all
+        @favorite_albums = current_user.favorited_by_type('Album')
     end
 
     def show

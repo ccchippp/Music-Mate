@@ -2,6 +2,11 @@
 
 <% if current_user %>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <%= link_to 'Browse Artists', artists_path %>
+    <% @favorite_albums = current_user.favorited_by_type('Album') %>
+    <% @favorite_albums.each do |a| %>
+    <%= image_tag(a.artwork, size: "300") %>
+    <% end %>
 <% else %>     
     <%= link_to 'Sign up', new_user_registration_path %>
     <%= link_to 'Sign in', new_user_session_path %>
