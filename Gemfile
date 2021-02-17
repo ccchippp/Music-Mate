@@ -6,6 +6,8 @@ ruby '2.6.1'
 gem 'devise'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'acts_as_favoritor'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'

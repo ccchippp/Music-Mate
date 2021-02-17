@@ -1,0 +1,6 @@
+var artistId = '<%= @artist.id%>'
+function toggleLikeButton(artistId, innerHTML) {
+  let likeButton = document.querySelector(`.like-icon[data-id='${artistId}']`)
+  likeButton.classList.toggle('red');
+}
+toggleLikeButton(artistId);

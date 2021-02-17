@@ -1,0 +1,6 @@
+var albumId = '<%= @album.id%>'
+function toggleLikeButton(albumId, innerHTML) {
+  let likeButton = document.querySelector(`.like-icon[data-id='${albumId}']`)
+  likeButton.classList.toggle('red');
+}
+toggleLikeButton(albumId);
