@@ -1,4 +1,5 @@
 <h1> <%= @artist.name %> </h1>
+<%= link_to 'Back Profile', root_path %>
 <%= link_to "Back to Artists", artists_path(@artists) %>
 <% @user = current_user %>
 <p> <%= @user.email.split('@')[0].capitalize %> </p>
@@ -8,6 +9,4 @@
 <% @artist.albums.each do |album| %>
     <%= image_tag(album.artwork, size: "300") %>
 <p> <%= link_to album.title, album_path(album) %> </p>
-
-
 <% end %> 
