@@ -1,8 +1,23 @@
 <h1>Welcome to ...</h1>
 
 <% if current_user %>
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> <br>
     <%= link_to 'Browse Artists', artists_path %>
+
+    <div>
+    <h3>Favorite Albums</h3>
+    <% @favorite_albums = current_user.favorited_by_type('Album') %>
+    <% @favorite_albums.each do |a| %>
+    <%= image_tag(a.artwork, size: "300") %>
+    <% end %>
+    </div>
+    <div>
+    <h3>Favorite Songs</h3>
+    <% @favorite_songs = current_user.favorited_by_type('Song') %>
+    <% @favorite_songs.each do |s| %>
+    <%= s.name %> <%= s.artist.name %> <br>
+    <% end %>
+    </div>
 <% else %>     
     <%= link_to 'Sign up', new_user_registration_path %>
     <%= link_to 'Sign in', new_user_session_path %>

@@ -1,12 +1,28 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users
+  root to: "pages#home"
+
   resources :liked_artists
   resources :liked_albums
   resources :liked_songs
-  resources :albums
-  resources :songs
-  resources :artists
-  resources :users
-  root to: "pages#home"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  resources :albums, only: [:index, :show] do
+    member do
+      post 'toggle_favorite', to: "albums#toggle_favorite"
+    end
+  end
+  
+  resources :songs, only: [:index, :show] do
+    member do
+      post 'toggle_favorite', to: "songs#toggle_favorite"
+    end
+  end
+  
+  resources :artists, only: [:index, :show] do
+    member do
+      post 'toggle_favorite', to: "artists#toggle_favorite"
+    end
+  end
+
 end

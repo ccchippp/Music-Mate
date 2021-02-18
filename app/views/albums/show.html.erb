@@ -1,5 +1,9 @@
 <%= image_tag(@album.artwork, size: "50") %>
 <h1> <%= @album.title %> </h1>
+<% @user = current_user%>
+<%= link_to "like", toggle_favorite_album_path(@album), remote: true, method: :post %>
+
+<% LikedAlbum.new(like: false, album_id: @album.id, user_id: @user.id)%>
 
 <table>
     <thead>
@@ -13,7 +17,7 @@
     <tbody>
     <% @album.songs.each do |song| %>
         <tr>
-            <td> like </td>
+            <td> <%= link_to "like", toggle_favorite_song_path(song), remote: true, method: :post %> </td>
             <td><%= song.name %></td>
             <td><%= song.artist.name %></td>
         </tr>
