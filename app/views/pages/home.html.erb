@@ -1,7 +1,8 @@
-<h1>Welcome to ...</h1>
-
 <% if current_user %>
+<% @user = current_user %>
+<h1> Welcome <%= @user.email.split('@')[0].capitalize %> </h1>
 <div id="link">
+
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> <br>
     <%= link_to 'Browse Artists', artists_path %>
 </div>
@@ -9,8 +10,8 @@
     <h3>Favorite Albums</h3>
     <div id="album">
     <% @favorite_albums = current_user.favorited_by_type('Album') %>
-    <% @favorite_albums.each do |a| %>
-    <%= image_tag(a.artwork, size: "300") %>
+    <% @favorite_albums.each do |album| %>
+    <%= link_to image_tag(album.artwork, size: "300"), album_path(album) %>
     <% end %>
     </div>
 
@@ -20,13 +21,17 @@
     <% @favorite_songs = current_user.favorited_by_type('Song') %>
     <% @favorite_songs.each do |s| %>
     <div id="song">
-    <strong>Artist:</strong> <%= s.artist.name %><span></span><strong>Song:</strong> <%= s.name %> <br>
+    <strong>Artist:</strong> <%= s.artist.name.titleize %><span></span><strong>Song:</strong> <%= s.name.titleize %> <br>
     </div>
     <% end %>
   
-<% else %>     
-    <%= link_to 'Sign up', new_user_registration_path %>
-    <%= link_to 'Sign in', new_user_session_path %>
+<% else %>    
+    <h1>Please sign up or sign in</h1>
+    
+    <div id="link">
+        <%= link_to 'Sign up', new_user_registration_path %> <span> </span>
+        <%= link_to 'Sign in', new_user_session_path %>
+    </div>
 <% end %>
 
 

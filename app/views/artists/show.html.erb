@@ -1,19 +1,22 @@
 <h1> <%= @artist.name %> </h1>
 
 <div id="link">
-    <%= link_to 'Back to Profile', root_path %> <br>
+    <%= link_to 'Back to Profile', root_path %> <span></span>
     <%= link_to "Back to Artists", artists_path(@artists) %>
 
     <% @user = current_user %>
-    <p> <%= @user.email.split('@')[0].capitalize %> </p>
 </div>
 
 
 
 
 <% @artist.albums.order(:release_date).reverse.each do |album| %>
-    <%= link_to image_tag(album.artwork, size: "300"), album_path(album) %>
+    <%= link_to image_tag(album.artwork, size: "400"), album_path(album) %>
+
+  
     <div id="albumtitle">
-     <%=album.title%> 
+     <%=album.title%> <span></span>
+     <%= link_to "♥️", toggle_favorite_album_path(album), remote: true, method: :post %>
     </div>
+
 <% end %> 
