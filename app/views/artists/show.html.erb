@@ -1,12 +1,17 @@
 <h1> <%= @artist.name %> </h1>
-<%= link_to 'Back Profile', root_path %> <br>
-<%= link_to "Back to Artists", artists_path(@artists) %>
-<% @user = current_user %>
-<p> <%= @user.email.split('@')[0].capitalize %> </p>
+
+<div id="link">
+    <%= link_to 'Back to Profile', root_path %> <br>
+    <%= link_to "Back to Artists", artists_path(@artists) %>
+
+    <% @user = current_user %>
+    <p> <%= @user.email.split('@')[0].capitalize %> </p>
+<div>
 
 
 
-<% @artist.albums.each do |album| %>
+
+<% @artist.albums.order(:release_date).reverse.each do |album| %>
     <%= image_tag(album.artwork, size: "300") %>
 <p> <%= link_to album.title, album_path(album) %> </p>
 <% end %> 

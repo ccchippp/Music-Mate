@@ -1,8 +1,10 @@
 <h1>Welcome to ...</h1>
 
 <% if current_user %>
+<div id="link">
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> <br>
     <%= link_to 'Browse Artists', artists_path %>
+</div>
 
     <h3>Favorite Albums</h3>
     <div id="album">
@@ -18,7 +20,7 @@
     <% @favorite_songs = current_user.favorited_by_type('Song') %>
     <% @favorite_songs.each do |s| %>
     <div id="song">
-    <strong>Song:</strong> <%= s.name %><span></span><strong>Artist:</strong> <%= s.artist.name %> <br>
+    <strong>Artist:</strong> <%= s.artist.name %><span></span><strong>Song:</strong> <%= s.name %> <br>
     </div>
     <% end %>
   
