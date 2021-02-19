@@ -4,7 +4,8 @@
 <%= link_to "♥️", toggle_favorite_album_path(@album), remote: true, method: :post %>
 </div>
 <div id="link">
-<%= link_to 'Back to Profile', root_path %> <br>
+<%= link_to "Back to #{@album.artist.name}'s Albums", :back %> <br>
+<%= link_to 'Back to Profile', root_path %>
 </div>
 <table>
     <thead>
@@ -25,6 +26,3 @@
     <%end%>
     </tbody>
 </table>
-<div id="link">
-<%= link_to "Back to #{@album.artist.name}'s Albums", :back %>
-</div>

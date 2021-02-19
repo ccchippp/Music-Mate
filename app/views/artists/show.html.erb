@@ -6,12 +6,14 @@
 
     <% @user = current_user %>
     <p> <%= @user.email.split('@')[0].capitalize %> </p>
-<div>
+</div>
 
 
 
 
 <% @artist.albums.order(:release_date).reverse.each do |album| %>
-    <%= image_tag(album.artwork, size: "300") %>
-<p> <%= link_to album.title, album_path(album) %> </p>
+    <%= link_to image_tag(album.artwork, size: "300"), album_path(album) %>
+    <div id="albumtitle">
+     <%=album.title%> 
+    </div>
 <% end %> 

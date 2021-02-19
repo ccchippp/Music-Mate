@@ -4,6 +4,7 @@
    }
 #head * {
     display: inline;
+    margin-top: -50px;
     margin-bottom: 20px;
     font-size: 50px;
    }
@@ -14,9 +15,10 @@ th, td {
     width: 1fr 5fr 3fr; 
     padding:5px 
 } 
-#link {
-    font-size: 20px;
+body{
 }
+
+
 #heart {
     font-size: 32px;
 }

@@ -1,5 +1,8 @@
 <h1>Artists</h1>
+
+<div id="link">
 <%= link_to 'Back Profile', root_path %> <br>
+</div>
 <% @artists.order(:name).each do |artist| %>
 <h3> <%= link_to artist.name, artist_path(artist) %> </h3>
 <% end %>
