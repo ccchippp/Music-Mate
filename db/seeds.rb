@@ -10,6 +10,8 @@ bk = Artist.create(name: "The Black Keys")
 gorillaz = Artist.create(name: "Gorillaz")
 magrog = Artist.create(name: "Maggie Rogers")
 joji = Artist.create(name: "Joji")
+ah = Artist.create(name: "Astra Heights")
+
 
 lz = Album.create( title: "Led Zeppelin", release_date: 1969, artist_id: zepp.id, artwork: "https://images-na.ssl-images-amazon.com/images/I/51SUWsbmnHL._SX466_.jpg")
     Song.create( name: "Good Times Bad Times", album_id: lz.id, artist_id: zepp.id )
@@ -344,3 +346,12 @@ nectar = Album.create( title: "Nectar", release_date: 2020, artist_id: joji.id, 
     Song.create( name: "Reanimator", album_id: nectar.id, artist_id: joji.id )
     Song.create( name: "Like You Do", album_id: nectar.id, artist_id: joji.id )
     Song.create( name: "Your Man", album_id: nectar.id, artist_id: joji.id )
+
+gp = Album.create( title: "Good Problems", release_date: 2007, artist_id: ah.id, artwork: "https://m.media-amazon.com/images/I/61N5I9rZ8GL._SS500_.jpg")
+    Song.create( name: "Good People", album_id: gp.id, artist_id: ah.id )
+    Song.create( name: "The March", album_id: gp.id, artist_id: ah.id )
+    Song.create( name: "The Whole World Changes", album_id: gp.id, artist_id: ah.id )
+    Song.create( name: "It's Alright", album_id: gp.id, artist_id: ah.id )
+    Song.create( name: "Call To The Underground", album_id: gp.id, artist_id: ah.id )
+    Song.create( name: "Greg The Illuminator", album_id: gp.id, artist_id: ah.id )
+    
