@@ -15,7 +15,7 @@
     <h3>Favorite Songs</h3>
     <% @favorite_songs = current_user.favorited_by_type('Song') %>
     <% @favorite_songs.each do |s| %>
-    <%= s.name %> <%= s.artist.name %> <br>
+    <strong>Song:</strong> <%= s.name %> <strong>Artist:</strong> <%= s.artist.name %> <br>
     <% end %>
     </div>
 <% else %>     
