@@ -2,7 +2,6 @@
 <% @user = current_user %>
 <h1> Welcome <%= @user.email.split('@')[0].capitalize %> </h1>
 <div id="link">
-
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> <br>
     <%= link_to 'Browse Artists', artists_path %>
 </div>
